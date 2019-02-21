@@ -1,2 +1,131 @@
-#!/bin/sh
-echo hello world
+#!/bin/bash
+
+scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" 
+records="$scriptDir/records.txt"
+
+takeRecord () {
+    echo Adversity: What was the thing that happened to cause the belief?
+    echo ----------
+    read adversity
+    echo
+
+    echo Beliefs: What are the thoughts that stemmed from this adversity?
+    echo ----------
+    read beliefs
+    echo
+
+    echo Consequences: What did you do or feel in reaction to these beliefs?
+    echo ----------
+    read consequences
+    echo
+
+    echo Evidence: What evidence do you have to discredit your beliefs? 
+    echo For example if you believe that you’ve completely ruined your diet by eating some cake, you might recognise that actually you’ve only gone over your calorie allowance by a small amount, and it’s the first time in two weeks. 
+    echo ----------
+    read evidence
+    echo
+
+    echo Alternatives: Things don’t tend to have just a single cause. When you encounter adversity, explore different possible causes for it. 
+    echo For example if you do badly on a test, what are the possible causes? Were you tired? Did you perhaps not put enough time into preparation? 
+    echo Focus on the possible explanations which are changeable \(I didn’t spend enough time preparing\), specific \(this particular exam was difficult\), and non personal \(the professor marked it unfairly\) causes.
+    echo ----------
+    read alternatives
+    echo
+
+    echo Implications: 
+    echo Suppose that your belief is true. For example, if your boss frowns at you, perhaps you have in fact done something to make them angry, but even if that’s the case then is it the end of the world? 
+    echo Just because you have made someone angry, it doesn’t mean that you are a bad person or a failure. Ask yourself what the adversity really implies, then again look for the evidence. You may have made your boss angry today, but it’s the first time in four months of working here, you’re usually a great employee.
+    echo ----------
+    read implications
+    echo
+
+    echo Usefulness: Whether or not the belief is accurate, is it useful to hold it in your mind? What do you accomplish by ruminating on it? 
+    echo If it is more useful to move on with your day than to think about this right now, then consider parking the thought and returning to it at a later, specific time. You might find that simply committing to this will remove the thought from your mind and you will forget about it. 
+    echo Some alternative approaches might be to distract yourself with a physical sensation such as a pinch to the arm, or write the thought on a note to ventilate the thought. Finally, you might detail all the ways you can change the situation in the future. 
+    echo ----------
+    read usefulness
+    echo
+
+    echo Adversity >> $records
+    echo $adversity >> $records
+    echo >> $records
+
+    echo Beliefs >> $records
+    echo $adversity >> $records
+    echo >> $records
+
+    echo Consequences >> $records
+    echo $consequences >> $records
+    echo >> $records
+
+    echo Evidence >> $records
+    echo $evidence >> $records
+    echo >> $records
+
+    echo Alternatives >> $records
+    echo $alternatives >> $records
+    echo >> $records
+    
+    echo Implications >> $records
+    echo $implications >> $records
+    echo >> $records
+
+    echo Usefulness >> $records
+    echo $usefulness >> $records
+    echo >> $records
+    echo --------------------------------------------------------------------------------------------------------------- >> $records
+    echo >> $records
+}
+
+function about() {
+    cat
+    echo This tool is based off of the book \"Learned Optimism\"
+    echo It\'s purpose is to train your mind to have a more positive explanatory style. What is meant by explanatory style is the way that you describe and explain events that happen around you.
+    echo There are three main characteristics of explanatory style that differentiate optimists from pessimists:
+    echo
+    echo Permanence: is the thing permanent or temporary?
+    echo Pessimists tend to think that bad things are permanent while good things are temporary
+    echo ---------------------------
+    echo Pessimistic example \(permanent\): \"skiing is difficult\"
+    echo Optimistic example: \(temporary\): \"the trails were icy today\"
+    echo
+    echo Pervasiveness: Does your belief apply to everything or just this one specific example?
+    echo Pessimists tend to apply negative beliefs to everything in a category rather than specific instances
+    echo ---------------------------
+    echo Pessimistic example \(universal\): I\'m repulsive\"
+    echo Optimistic example \(specific\): I\'m repulsive to him\" 
+    echo
+    echo Pervasiveness: Does your belief apply to everything or just this one specific example?
+    echo Pessimists tend to apply negative beliefs to everything in a category rather than specific instances
+    echo ---------------------------
+    echo Pessimistic example \(universal\): I\'m repulsive\"
+    echo Optimistic example \(specific\): I\'m repulsive to him\" 
+}
+
+function help() {
+    echo "cli-cbt - A simple script for practicing CBT and changing your explanatory style. Helps to reshape your thoughts in a positive manner."
+    echo
+    echo "  cli-cbt - begins the process for creating a new record"
+    echo "  cli-cbt records - opens the file in which all of your records are stored"
+    echo "  cli-cbt about - provides some background about the methods used in this tool"
+}
+
+if [ $1 ]
+then
+    case "$1" in
+        records)
+            open $records
+        ;;
+        about)
+            cat $scriptDir/about.txt
+        ;;
+        help)
+            help
+        ;;
+        *)
+            help
+        ;;
+    esac
+else
+    takeRecord
+fi
