@@ -1,5 +1,6 @@
 This tool is based off of the book "Learned Optimism"
-It's purpose is to train your mind to have a more positive explanatory style. What is meant by explanatory style is the way that you describe and explain events that happen around you.
+
+It's purpose is to train your mind to have a more positive explanatory style - the way that you describe and explain events that happen around you.
 
 ## Installation
 To start using the tool, clone the directory to your machine and then navigate to the folder in your terminal and run `./cli-cbt`
