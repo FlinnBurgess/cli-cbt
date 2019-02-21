@@ -23,7 +23,7 @@ Pessimists tend to think that bad things are permanent while good things are tem
 
 Pessimistic example (permanent): "skiing is difficult", "the boss is a bastard"  
 Optimistic example: (temporary): "the trails were icy today", "the boss is in a bad mood"  
-###Pervasiveness: Does your belief apply to everything or just this one specific example?
+### Pervasiveness: Does your belief apply to everything or just this one specific example?
 Pessimists tend to apply negative beliefs to everything in a category rather than specific instances
 
 Pessimistic example (universal): "I'm repulsive", "All teachers are unfair"  
@@ -33,6 +33,8 @@ Pessimists tend to blame themselves for bad events
 
 Pessimistic example (internal): "I have no talent in poker", "I'm stupid"  
 Optimistic example (external): "I have no luck in poker", "You're stupid"
+
+---
 
 The tool uses CBT (Cognitive Behavioural Therapy) methods to help you change your explanatory style from negative to positive.
 When you run the tool, it will ask you first for three things:
