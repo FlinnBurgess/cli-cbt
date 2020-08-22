@@ -51,7 +51,7 @@ takeRecord () {
     echo >> $records
 
     echo Beliefs >> $records
-    echo $adversity >> $records
+    echo $beliefs >> $records
     echo >> $records
 
     echo Consequences >> $records
